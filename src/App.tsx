@@ -26,10 +26,6 @@ function App() {
 		setIsDup(dup)
 	}, [dup])
 
-	React.useEffect(() => {
-		console.log(dup)
-	})
-
 	const handleChangeQuestion: () => void = () => {
 		if (dup.every(item => item === 1)) {
 			const newDup = dup.map(item => 0)

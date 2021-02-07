@@ -32,7 +32,7 @@ function App() {
 		}
 	})
 
-	const handleChangeQuestion = () => {
+	const handleChangeQuestion: void = () => {
 		const min = 0
 		const max = questions.length - 1
 

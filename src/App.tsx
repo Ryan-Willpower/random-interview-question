@@ -24,15 +24,23 @@ function App() {
 	React.useEffect(() => {
 		dup[0] = 1
 		setIsDup(dup)
-	}, [])
+	}, [dup])
 
 	React.useEffect(() => {
-		if (dup.every(item => item === 1)) {
-			setIsDup(dup.map(item => 0))
-		}
+		console.log(dup)
 	})
 
 	const handleChangeQuestion: () => void = () => {
+		if (dup.every(item => item === 1)) {
+			const newDup = dup.map(item => 0)
+
+			setCurrentQuestion(questions[0])
+			newDup[0] = 1
+			setIsDup(newDup)
+
+			return
+		}
+		
 		const min = 0
 		const max = questions.length - 1
 
